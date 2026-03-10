@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { Product } from "../../types/types";
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
+import styles from "./CartItem.module.css";
 
 interface CartItemProps {
   product: Product;
@@ -12,16 +13,20 @@ function CartItem({ product, updateCart, removeFromCart }: CartItemProps) {
   const [quantity, setQuantity] = useState<number>(product.quantity || 1);
 
   return (
-    <div>
-      <img src={product.image} alt={product.title} />
+    <div className={styles.cartItem}>
+      <img
+        className={styles.cartItemImg}
+        src={product.image}
+        alt={product.title}
+      />
       <div>
-        <p>{product.title}</p>
+        <p className={styles.cartItemTitle}>{product.title}</p>
         <p>Price: ${product.price}</p>
         <p>Subtotal: ${(product.price * quantity).toFixed(2)}</p>
 
         <QuantitySelector initial={quantity} onChange={setQuantity} />
 
-        <div>
+        <div className={styles.cartItemBtns}>
           <button onClick={() => updateCart(product.id, quantity)}>
             Update
           </button>
