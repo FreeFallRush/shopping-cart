@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./ProductCard.module.css";
 import type { Product } from "../../types/types";
+import Rating from "../Rating/Rating";
 
 interface ProductCardProps {
   product: Product;
@@ -20,6 +21,11 @@ function ProductCard({ product }: ProductCardProps) {
         <h3>{product.title}</h3>
         <p className={styles.price}>${product.price}</p>
 
+        <div className={styles.infoGroup}>
+          <Rating rate={product.rating.rate} count={product.rating.count} />
+          <p className={styles.category}>{product.category}</p>
+        </div>
+
         <p className={expanded ? styles.fullDescription : styles.description}>
           {product.description}
         </p>
@@ -29,7 +35,6 @@ function ProductCard({ product }: ProductCardProps) {
         >
           {expanded ? "Read less" : "Read more"}
         </button>
-        <p className={styles.category}>{product.category}</p>
       </div>
     </>
   );
