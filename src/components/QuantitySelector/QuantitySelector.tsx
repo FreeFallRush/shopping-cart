@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./QuantitySelector.module.css";
 
 interface QuantitySelectorProps {
   initial?: number;
@@ -25,7 +26,7 @@ function QuantitySelector({ initial = 1, onChange }: QuantitySelectorProps) {
   };
 
   return (
-    <div>
+    <div className={styles.quantity}>
       <button onClick={increment}>-</button>
       <span>{quantity}</span>
       <button onClick={decrement}>+</button>
