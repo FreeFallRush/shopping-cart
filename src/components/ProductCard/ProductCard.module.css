@@ -33,3 +33,27 @@ h3 {
   color: #747474;
   font-size: 12px;
 }
+
+.fullDescription {
+  font-size: 14px;
+}
+
+.readMore {
+  width: 100%;
+  text-align: right;
+  background: none;
+  border: none;
+  color: #2c7be5;
+  cursor: pointer;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 14px;
+  color: #444;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
