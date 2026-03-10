@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./ProductCard.module.css";
 import type { Product } from "../../types/types";
 import Rating from "../Rating/Rating";
+import QuantitySelector from "../QuantitySelector/QuantitySelector";
 
 interface ProductCardProps {
   product: Product;
@@ -9,6 +10,7 @@ interface ProductCardProps {
 
 function ProductCard({ product }: ProductCardProps) {
   const [expanded, setExpanded] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   return (
     <>
@@ -35,6 +37,9 @@ function ProductCard({ product }: ProductCardProps) {
         >
           {expanded ? "Read less" : "Read more"}
         </button>
+
+        <QuantitySelector initial={1} onChange={setQuantity} />
+        <button>Add to Cart</button>
       </div>
     </>
   );
