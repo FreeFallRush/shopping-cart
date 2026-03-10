@@ -27,9 +27,9 @@ function QuantitySelector({ initial = 1, onChange }: QuantitySelectorProps) {
 
   return (
     <div className={styles.quantity}>
-      <button onClick={increment}>-</button>
+      <button onClick={decrement}>-</button>
       <span>{quantity}</span>
-      <button onClick={decrement}>+</button>
+      <button onClick={increment}>+</button>
     </div>
   );
 }
