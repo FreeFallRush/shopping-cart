@@ -6,9 +6,10 @@ import QuantitySelector from "../QuantitySelector/QuantitySelector";
 
 interface ProductCardProps {
   product: Product;
+  addToCart: (product: Product) => void;
 }
 
-function ProductCard({ product }: ProductCardProps) {
+function ProductCard({ product, addToCart }: ProductCardProps) {
   const [expanded, setExpanded] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
@@ -39,7 +40,9 @@ function ProductCard({ product }: ProductCardProps) {
         </button>
 
         <QuantitySelector initial={1} onChange={setQuantity} />
-        <button>Add to Cart</button>
+        <button onClick={() => addToCart({ ...product, quantity })}>
+          Add to Cart
+        </button>
       </div>
     </>
   );
