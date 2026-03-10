@@ -1,5 +1,6 @@
 import useProducts from "../hooks/useProducts";
 import ProductCard from "../components/ProductCard/ProductCard";
+import styles from "./Pages.module.css";
 
 function ShopPage() {
   const { products, loading, error } = useProducts();
@@ -11,7 +12,7 @@ function ShopPage() {
     <>
       <div>
         <h1>Shop Page</h1>
-        <div className="shop-container">
+        <div className={styles.shopContainer}>
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
