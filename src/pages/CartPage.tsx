@@ -11,7 +11,7 @@ interface OutletContextType {
 }
 
 function CartPage() {
-  const { cart, addToCart, removeFromCart, updateCart } =
+  const { cart, removeFromCart, updateCart } =
     useOutletContext<OutletContextType>();
 
   const total = cart.reduce(
