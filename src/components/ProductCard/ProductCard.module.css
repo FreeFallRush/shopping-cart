@@ -64,3 +64,20 @@ h3 {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.addBtn {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f8bd19;
+  color: rgb(59, 59, 59);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.addBtn:hover {
+  background-color: #ecb314;
+  color: rgb(0, 0, 0);
+}

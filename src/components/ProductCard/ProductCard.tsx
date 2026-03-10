@@ -40,7 +40,10 @@ function ProductCard({ product, addToCart }: ProductCardProps) {
         </button>
 
         <QuantitySelector initial={1} onChange={setQuantity} />
-        <button onClick={() => addToCart({ ...product, quantity })}>
+        <button
+          className={styles.addBtn}
+          onClick={() => addToCart({ ...product, quantity })}
+        >
           Add to Cart
         </button>
       </div>
