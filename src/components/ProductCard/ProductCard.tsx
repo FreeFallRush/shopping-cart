@@ -9,7 +9,14 @@ function ProductCard({ product }: ProductCardProps) {
   return (
     <>
       <div className={styles.card}>
-        <img src={product.image} alt={product.title} />
+        <img
+          className={styles.cardImg}
+          src={product.image}
+          alt={product.title}
+        />
+        <h3>{product.title}</h3>
+        <p className={styles.price}>${product.price}</p>
+        <p className={styles.category}>{product.category}</p>
       </div>
     </>
   );
