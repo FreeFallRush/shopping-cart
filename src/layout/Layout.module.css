@@ -1,0 +1,19 @@
+.footer {
+  background-color: #659aa1;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 50px;
+  border-top: 1px solid #659aa1;
+}
+
+.appWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.appMain {
+  flex: 1;
+}

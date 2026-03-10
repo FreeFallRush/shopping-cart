@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar/Navbar";
 import { Outlet } from "react-router";
 import type { Product } from "../types/types";
+import styles from "./Layout.module.css";
 
 interface LayoutProps {
   cart: Product[];
@@ -18,14 +19,14 @@ function Layout({
   const cartCount = cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
 
   return (
-    <div>
+    <div className={styles.appWrapper}>
       <Navbar cartCount={cartCount} />
-      <main>
+      <main className={styles.appMain}>
         <Outlet context={{ cart, addToCart, removeFromCart, updateCart }} />
       </main>
 
-      <footer>
-        <p>©EveryShop, 2026 . All rights reserved to the imagination.</p>
+      <footer className={styles.footer}>
+        <p>All rights reserved © EveryShop, 2026.</p>
       </footer>
     </div>
   );
