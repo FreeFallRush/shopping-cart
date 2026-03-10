@@ -12,8 +12,8 @@ const Homepage: React.FC = () => {
   const { addToCart } = useOutletContext<OutletContextType>();
   const { products, loading, error } = useProducts();
 
-  if (loading) return <p>Loading products...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p className={styles.loadingText}>Loading products...</p>;
+  if (error) return <p className={styles.errorText}>{error}</p>;
   const featuredProducts = products.slice(0, 4);
 
   return (
@@ -27,7 +27,7 @@ const Homepage: React.FC = () => {
       </section>
 
       <section className={styles.featured}>
-        <h2>Featured Products</h2>
+        <h2 className={styles.pageTitle}>Featured Products</h2>
         <div className={styles.container}>
           {featuredProducts.map((product) => (
             <ProductCard

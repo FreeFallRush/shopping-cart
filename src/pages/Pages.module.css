@@ -97,12 +97,13 @@
   overflow-y: auto;
 }
 
-.emptyText {
+.loadingText,
+.errorText {
   width: 100%;
   text-align: center;
 }
 
-h1 {
+.pageTitle {
   text-align: center;
   margin-bottom: 20px;
   color: #444;

@@ -12,13 +12,13 @@ function ShopPage() {
   const { addToCart } = useOutletContext<OutletContextType>();
   const { products, loading, error } = useProducts();
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p className={styles.loadingText}>Loading products...</p>;
+  if (error) return <p className={styles.errorText}>{error}</p>;
 
   return (
     <>
       <div>
-        <h1>Shop Page</h1>
+        <h1 className={styles.pageTitle}>Shop Page</h1>
         <div className={styles.shopContainer}>
           {products.map((product) => (
             <ProductCard

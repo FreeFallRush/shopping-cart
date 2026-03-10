@@ -28,7 +28,7 @@ function CartPage() {
   };
   return (
     <>
-      <h1>Cart Page</h1>
+      <h1 className={styles.pageTitle}>Cart Page</h1>
 
       <div className={styles.cartContainer}>
         {cart.length === 0 && (
