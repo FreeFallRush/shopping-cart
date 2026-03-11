@@ -9,7 +9,11 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount }) => {
   return (
     <>
       <nav>
-        <div className={styles.logo}>EveryShop</div>
+        <div>
+          <Link className={styles.link} to="/">
+            <span className={styles.logo}>EveryShop</span>
+          </Link>
+        </div>
         <div className={styles.links}>
           <ul className={styles.list}>
             <Link className={styles.link} to="/">
