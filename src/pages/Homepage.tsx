@@ -3,7 +3,7 @@ import useProducts from "../hooks/useProducts";
 import ProductCard from "../components/ProductCard/ProductCard";
 import { Link } from "react-router";
 
-const Homepage: React.FC = () => {
+const Homepage = () => {
   const { products, loading, error } = useProducts();
 
   if (loading) return <p className={styles.loadingText}>Loading products...</p>;
