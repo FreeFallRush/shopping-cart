@@ -34,6 +34,9 @@ nav {
   cursor: pointer;
 }
 
+.link:hover {
+  color: #f8bd19;
+}
 .cartCount {
   margin-left: 6px;
   padding: 2px 8px;
