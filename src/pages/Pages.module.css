@@ -98,7 +98,8 @@
 }
 
 .loadingText,
-.errorText {
+.errorText,
+.cartEmptyText {
   width: 100%;
   text-align: center;
 }

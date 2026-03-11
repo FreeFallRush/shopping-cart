@@ -32,7 +32,7 @@ function CartPage() {
 
       <div className={styles.cartContainer}>
         {cart.length === 0 && (
-          <p className={styles.emptyText}>
+          <p className={styles.cartEmptyText}>
             Your cart is empty. Add something from Shop.
           </p>
         )}
