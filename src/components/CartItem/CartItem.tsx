@@ -2,14 +2,15 @@ import { useState } from "react";
 import type { Product } from "../../types/types";
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
 import styles from "./CartItem.module.css";
+import { useCart } from "../../hooks/useCart";
 
 interface CartItemProps {
   product: Product;
-  updateCart: (id: number, quantity: number) => void;
-  removeFromCart: (id: number) => void;
 }
 
-function CartItem({ product, updateCart, removeFromCart }: CartItemProps) {
+function CartItem({ product }: CartItemProps) {
+  const { updateCart, removeFromCart } = useCart();
+
   const [quantity, setQuantity] = useState<number>(product.quantity || 1);
 
   return (

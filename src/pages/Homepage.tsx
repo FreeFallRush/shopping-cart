@@ -1,19 +1,14 @@
-import type { Product } from "../types/types";
 import styles from "./Pages.module.css";
 import useProducts from "../hooks/useProducts";
 import ProductCard from "../components/ProductCard/ProductCard";
-import { Link, useOutletContext } from "react-router";
-
-interface OutletContextType {
-  addToCart: (product: Product) => void;
-}
+import { Link } from "react-router";
 
 const Homepage: React.FC = () => {
-  const { addToCart } = useOutletContext<OutletContextType>();
   const { products, loading, error } = useProducts();
 
   if (loading) return <p className={styles.loadingText}>Loading products...</p>;
   if (error) return <p className={styles.errorText}>{error}</p>;
+
   const featuredProducts = products.slice(0, 4);
 
   return (
@@ -30,11 +25,7 @@ const Homepage: React.FC = () => {
         <h2 className={styles.pageTitle}>Featured Products</h2>
         <div className={styles.container}>
           {featuredProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              addToCart={addToCart}
-            />
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>

@@ -1,18 +1,9 @@
-import { useOutletContext } from "react-router";
 import CartItem from "../components/CartItem/CartItem";
-import type { Product } from "../types/types";
 import styles from "./Pages.module.css";
-
-interface OutletContextType {
-  cart: Product[];
-  addToCart: (product: Product) => void;
-  removeFromCart: (id: number) => void;
-  updateCart: (id: number, quantity: number) => void;
-}
+import { useCart } from "../hooks/useCart";
 
 function CartPage() {
-  const { cart, removeFromCart, updateCart } =
-    useOutletContext<OutletContextType>();
+  const { cart } = useCart();
 
   const total = cart.reduce(
     (sum, item) => sum + item.price * item.quantity!,
@@ -39,12 +30,7 @@ function CartPage() {
 
         <div className={styles.cartItemsContainer}>
           {cart.map((item) => (
-            <CartItem
-              key={item.id}
-              product={item}
-              removeFromCart={removeFromCart}
-              updateCart={updateCart}
-            />
+            <CartItem key={item.id} product={item} />
           ))}
         </div>
 

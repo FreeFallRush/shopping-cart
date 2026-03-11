@@ -3,13 +3,15 @@ import styles from "./ProductCard.module.css";
 import type { Product } from "../../types/types";
 import Rating from "../Rating/Rating";
 import QuantitySelector from "../QuantitySelector/QuantitySelector";
+import { useCart } from "../../hooks/useCart";
 
 interface ProductCardProps {
   product: Product;
-  addToCart: (product: Product) => void;
 }
 
-function ProductCard({ product, addToCart }: ProductCardProps) {
+function ProductCard({ product }: ProductCardProps) {
+  const { addToCart } = useCart();
+
   const [expanded, setExpanded] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
